@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import { PrismaClient as PrismaClient1 } from './prisma/generated/client1';
-import { PrismaClient as PrismaClient2 } from './prisma/generated/client2';
+import { PrismaClient as PrismaClient1 } from './prisma/schema1/generated/client1';
+import { PrismaClient as PrismaClient2 } from './prisma/schema2/generated/client2';
 
 dotenv.config();
 

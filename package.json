@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prisma": "npx prisma generate --schema prisma/schema1.prisma --watch & npx prisma generate --schema prisma/schema2.prisma --watch",
-    "migrate-prisma1": "npx prisma migrate dev --name init --schema prisma/schema1.prisma",
-    "migrate-prisma2": "npx prisma migrate dev --name init --schema prisma/schema2.prisma",
+    "migrate-prisma1": "npx prisma migrate dev --name init --schema prisma/schema1/schema.prisma",
+    "migrate-prisma2": "npx prisma migrate dev --name init --schema prisma/schema2/schema.prisma",
     "dev": "ts-node index.ts"
   },
   "keywords": [],
