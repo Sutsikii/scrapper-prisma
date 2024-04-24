@@ -1,0 +1,27 @@
+{
+  "name": "apiscraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prisma": "npx prisma generate --schema prisma/schema1.prisma --watch & npx prisma generate --schema prisma/schema2.prisma --watch",
+    "migrate-prisma1": "npx prisma migrate dev --name init --schema prisma/schema1.prisma",
+    "migrate-prisma2": "npx prisma migrate dev --name init --schema prisma/schema2.prisma",
+    "dev": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "Sutsiki & Ylan",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "prisma": "^5.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
