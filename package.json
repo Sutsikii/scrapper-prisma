@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prisma-mac": "npx prisma generate --schema prisma/schema1/schema.prisma --watch & npx prisma generate --schema prisma/schema2/schema.prisma --watch",
+    "prisma-window": "npx prisma generate --schema prisma/schema1/schema.prisma --watch && npx prisma generate --schema prisma/schema2/schema.prisma --watch",
     "migrate-prisma1": "npx prisma migrate dev --name init --schema prisma/schema1/schema.prisma",
     "migrate-prisma2": "npx prisma migrate dev --name init --schema prisma/schema2/schema.prisma",
     "migrate-dev": "npx prisma migrate dev --name migrate --schema prisma/schema2/schema.prisma & npx prisma migrate dev --name migrate --schema prisma/schema1/schema.prisma",
