@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { getUsersFromDB1, getUsersFromDB2 } from '../libs/prisma';
 import cors from 'cors';
+import { dbConnectionTest } from './Utils/prismaUtils';
 
 dotenv.config();
 
@@ -33,6 +34,16 @@ app.get('/', async (req: Request, res: Response) => {
 
 const PORT: number = parseInt(process.env.PORT as string, 10) || 3000;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+(async () => {
+    // database connection teste
+    if (!(await dbConnectionTest())) {
+        server.close(() => {
+        console.log('Server closed.');
+        process.exit(0);
+        })
+    }
+})()
