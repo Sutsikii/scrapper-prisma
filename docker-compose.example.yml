@@ -1,0 +1,31 @@
+version: '3'
+name: teste_mongodb
+services:
+  mongodb-community-server:
+    # container_name: mongodb
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=VRuAd2Nvmp4ELHh5
+      - MONGO_INITDB_DATABASE=test
+    volumes:
+      - database_mongodb:/var/lib/postgresql/data:rw
+
+
+  database-postgre:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: nwsNote
+      POSTGRES_PASSWORD: skibidi
+      POSTGRES_USER: root
+    volumes:
+      - database_postgre:/var/lib/postgresql/data:rw
+
+volumes:
+  database_postgre:
+  database_mongodb:
