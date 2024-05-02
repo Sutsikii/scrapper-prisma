@@ -41,6 +41,7 @@ const server = app.listen(PORT, () => {
 (async () => {
     // database connection teste
     if (!(await dbConnectionTest())) {
+        console.log("CA TESTE OU BIEN? LES DB GENRE")
         server.close(() => {
         console.log('Server closed.');
         process.exit(0);
