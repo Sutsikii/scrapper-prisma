@@ -9,15 +9,25 @@ export const dbConnectionTest = async () => {
     console.log("DB Connection Test : START");
     try {
         await prisma1.$connect();
-        await prisma2.$connect();
-        console.log('Connected to the database');
+        console.log('Connected to the database 1 (postgre)');
     } catch (error) {
         console.error('Error connecting to the database :', error);
         return false;
     } finally {
         await prisma1.$disconnect();
+        console.log("DB Connection Test (postgre) : END");
+    }
+
+
+    try {
+        await prisma2.$connect();
+        console.log('Connected to the database 2 (mongodb)');
+    } catch (error) {
+        console.error('Error connecting to the database :', error);
+        return false;
+    } finally {
         await prisma2.$disconnect();
-        console.log("DB Connection Test : END");
+        console.log("DB Connection Test (mongodb) : END");
     }
 
     return true
