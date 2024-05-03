@@ -12,6 +12,7 @@
     "studio1": "npx prisma studio --schema prisma/schema1/schema.prisma",
     "studio2": "npx prisma studio --schema prisma/schema2/schema.prisma",
     "dev": "nodemon --exec ts-node ./src/index.ts",
+    "scrappe": "npx ts-node ./scrapper/scrapper.ts",
     "seed-user": "ts-node seeders/user.ts"
   },
   "keywords": [],
