@@ -12,7 +12,9 @@
     "studio1": "npx prisma studio --schema prisma/schema1/schema.prisma",
     "studio2": "npx prisma studio --schema prisma/schema2/schema.prisma",
     "dev": "nodemon --exec ts-node ./src/index.ts",
+    "cleanup": "ts-node libs/cleanup.ts",
     "scrappe": "npx ts-node ./scrapper/scrapper.ts",
+    "import": "ts-node libs/importRecipes.ts",
     "seed-user": "ts-node seeders/user.ts"
   },
   "keywords": [],
@@ -23,6 +25,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.4.0",
     "puppeteer": "^22.7.1",
     "puppeteer-core": "^22.7.1",
     "winston": "^3.13.0"
